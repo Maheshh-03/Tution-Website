@@ -1,7 +1,7 @@
  const express = require("express");
 const router = express.Router();
-const db = require("../config/db");
-const authMiddleware = require("../middleware/authMiddleware");
+const db = require("db.js");
+const authMiddleware = require("authMiddleware.js");
 
 /* ================= MY ENROLLMENTS =================
    URL: GET /api/my-enrollments
