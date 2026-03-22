@@ -1,0 +1,239 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard | Elite Classes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap -->
+   <link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/admin-dashboard.js"></script>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fb;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #0f172a;
+      min-height: 100vh;
+      position: fixed;
+      color: #fff;
+    }
+
+    .sidebar .brand {
+      padding: 22px;
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      padding: 14px 22px;
+      color: #cbd5f5;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: #1e293b;
+      color: #fff;
+    }
+
+    .sidebar a span {
+      margin-left: 10px;
+    }
+
+    /* Main */
+    .main {
+      margin-left: 260px;
+      padding: 25px 30px;
+    }
+
+    .topbar {
+      background: #ffffff;
+      padding: 15px 25px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+    }
+
+    .card-stat {
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    .table thead {
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .logout-btn {
+      background: #ef4444;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="adminMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">🎓 Elite Admin</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="aria-label"></button>
+  </div>
+
+  <div class="offcanvas-body p-0">
+    <a href="admin-dashboard.html" class="d-block p-3 text-decoration-none">
+      📊 Dashboard
+    </a>
+    <a href="#enquiries" class="d-block p-3 text-decoration-none">
+      📩 Enquiries
+    </a>
+    <a href="#" class="d-block p-3 text-decoration-none">
+      👨‍🎓 Students
+    </a>
+    <a href="#" class="d-block p-3 text-decoration-none">
+      📚 Courses
+    </a>
+    <a href="#" class="d-block p-3 text-decoration-none">
+      ⚙ Settings
+    </a>
+
+    <hr>
+
+    <a type="button" id="logoutBtn" class="d-block p-3 text-decoration-none text-danger" >
+  🚪 Logout
+    </a>
+
+  </div>
+</div>
+<!-- SIDEBAR -->
+ 
+<div class="sidebar">
+  <div class="brand">🎓 Elite Admin</div>
+
+  <a href="admin-dashboard.html" class="active">
+    📊 <span>Dashboard</span>
+  </a>
+
+  <a href="admin-dashboard.html#enquiries">
+    📩 <span>Enquiries</span>
+  </a>
+
+  <a href="#">
+    👨‍🎓 <span>Students</span>
+  </a>
+
+  <a href="#">
+    📚 <span>Courses</span>
+  </a>
+
+  <a href="#">
+    ⚙ <span>Settings</span>
+  </a>
+  <hr>
+   <a type="button" id="logoutDesktop" class="btn btn-link text-danger p-2 m-2">
+  🚪 <span>Logout</span>
+   </a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+    <div class="topbar d-flex align-items-center gap-3">
+ <button id="menuBtn" class="btn btn-outline-dark d-md-none">
+  ☰
+</button>
+
+
+
+  <h4 class="fw-bold mb-0">Admin Dashboard</h4>
+</div>
+
+  <!-- TOP BAR -->
+  
+
+  <!-- STATS -->
+  <div class="row g-4 mb-4">
+    <div class="col-md-4">
+      <div class="card card-stat p-4">
+        <small class="text-muted">Total Enquiries</small>
+        <h2 class="fw-bold mt-2" id="totalEnquiries">0</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-stat p-4">
+        <small class="text-muted">Courses</small>
+        <h2 class="fw-bold mt-2">3</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-stat p-4">
+        <small class="text-muted">System Status</small>
+        <h2 class="fw-bold mt-2 text-success">Live</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENQUIRIES -->
+  <div class="card card-stat p-4" id="enquiries">
+    <h5 class="fw-bold mb-3">Latest Enquiries</h5>
+
+    <div class="table-responsive">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody id="enquiryTable">
+          <tr>
+            <td colspan="5" class="text-center text-muted">
+              Loading enquiries...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- SCRIPT -->
+ 
+ 
+
+ 
+</body>
+</html>

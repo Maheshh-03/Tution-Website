@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Elite Tuition Classes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <script src="/js/navbar-auth.js"></script> -->
+  <!-- <script src="/js/auth-modal.js"></script> -->
+
+
+  <style>
+
+  .navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+
+  </style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold text-primary" href="index.html">
+      EliteClasses
+    </a>
+
+    <!-- Hamburger -->
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu"
+            aria-controls="navMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navMenu">
+
+      <!-- LEFT NAV LINKS -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="courses.html">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="faculty.html">Faculty</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="results.html">Results</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        
+      </ul>
+
+      <!-- RIGHT AUTH + CTA -->
+   <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+  <!-- LOGIN -->
+  <li class="nav-item" id="loginNav">
+    <button class="btn btn-link nav-link fw-medium"
+            data-auth="login"
+            data-bs-toggle="modal"
+            data-bs-target="#authModal">
+      Login
+    </button>
+   
+  </li>
+
+  <!-- SIGNUP -->
+  <li class="nav-item" id="signupNav">
+    <button class="btn btn-sm btn-primary rounded-pill px-3"
+            data-auth="signup"
+            data-bs-toggle="modal"
+            data-bs-target="#authModal">
+      Sign Up
+    </button>
+  </li>
+
+  <!-- PROFILE -->
+  <li class="nav-item dropdown d-none" id="profileMenu">
+    <button class="btn btn-primary dropdown-toggle"
+            data-bs-toggle="dropdown">
+      👤 My Profile
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><a class="dropdown-item" href="student-profile.html">View Profile</a></li>
+      <li><a class="dropdown-item" href="student-dashboard.html">Go to Dashboard</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li>
+        <button class="dropdown-item text-danger" id="logoutBtn">
+          Logout
+        </button>
+      </li>
+    </ul>
+  </li>
+
+   <li class="nav-item">
+    <a href="contact.html" class="btn btn-warning btn-sm ms-lg-2">
+      Enroll Now
+    </a>
+  </li>
+</ul>
+
+
+
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero-section d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <div class="col-md-6">
+        <h1 class="fw-bold mb-3">
+          Shaping Bright Futures<br>
+          with <span class="text-warning">Expert Guidance</span>
+        </h1>
+        <p class="text-muted mb-4">
+          Trusted tuition classes for academic excellence and competitive success.
+        </p>
+        <a href="#" class="btn btn-primary me-3">View Courses</a>
+        <a href="#" class="btn btn-outline-dark">Contact Us</a>
+      </div>
+      
+      <div class="col-md-6">
+  <div class="hero-img"></div>
+</div>
+
+
+    </div>
+    
+  </div>
+  
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+ <section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Why Choose Us</h2>
+      <p class="text-muted">We focus on results, quality & growth</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-3">
+        <div class="card text-center p-4 h-100 feature-card">
+          <div class="feature-icon">👨‍🏫</div>
+          <h5 class="fw-bold">Expert Faculty</h5>
+          <p class="text-muted">Highly experienced & qualified teachers</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center p-4 h-100 feature-card">
+          <div class="feature-icon">🏆</div>
+          <h5 class="fw-bold">Proven Results</h5>
+          <p class="text-muted">Consistent toppers every year</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center p-4 h-100 feature-card">
+          <div class="feature-icon">💡</div>
+          <h5 class="fw-bold">Smart Learning</h5>
+          <p class="text-muted">Modern teaching methodology</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center p-4 h-100 feature-card">
+          <div class="feature-icon">🎯</div>
+          <h5 class="fw-bold">Personal Attention</h5>
+          <p class="text-muted">Small batches for better focus</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================= COURSES SECTION ================= -->
+<section class="py-5" id="courses">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Courses</h2>
+      <p class="text-muted">Designed for academic excellence & competitive success</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Course 1 -->
+      <div class="col-md-4">
+        <div class="card course-card h-100">
+          <div class="card-body p-4">
+            <h5 class="fw-bold">Python Programming</h5>
+            <p class="text-muted">For Competition </p>
+
+            <ul class="list-unstyled my-3">
+              <li>✔ Concept-based learning</li>
+              <li>✔ Weekly tests</li>
+              <li>✔ Doubt sessions</li>
+            </ul>
+
+            <h4 class="fw-bold text-primary">₹2,999 / month</h4>
+
+            <a href="contact.html" class="btn btn-outline-primary w-100 mt-3">
+              Enroll Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="col-md-4">
+        <div class="card course-card featured-course h-100">
+          <div class="card-body p-4">
+            <span class="badge bg-warning text-dark mb-2">Most Popular</span>
+            <h5 class="fw-bold mt-2">C/C++/Java</h5>
+            <p class="text-muted">Game Development</p>
+
+            <ul class="list-unstyled my-3">
+              <li>✔ problem solving</li>
+              <li>✔ Daily practice</li>
+              <li>✔ Weekly exams Tests</li>
+            </ul>
+
+            <h4 class="fw-bold text-primary">₹4,999 / month</h4>
+
+            <a href="contact.html" class="btn btn-primary w-100 mt-3">
+              Enroll Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="col-md-4">
+        <div class="card course-card h-100">
+          <div class="card-body p-4">
+            <h5 class="fw-bold">HTML/CSS/JS Basic</h5>
+            <p class="text-muted">Web Designing</p>
+
+            <ul class="list-unstyled my-3">
+              <li>✔ Daily New Topic</li>
+              <li>✔ Performance tracking</li>
+              <li>✔ Personal guidance</li>
+            </ul>
+
+            <h4 class="fw-bold text-primary">₹6,999 / month</h4>
+
+            <a href="contact.html" class="btn btn-outline-primary w-100 mt-3">
+              Enroll Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FACULTY SECTION ================= -->
+<section class="py-5 bg-light" id="faculty">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Expert Faculty</h2>
+      <p class="text-muted">Learn from highly qualified & experienced educators</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Faculty 1 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card faculty-card text-center p-4 h-100">
+          <!-- <img src="https://randomuser.me/api/portraits/men/32.jpg" -->
+               class="faculty-img mx-auto mb-3" alt="Faculty">
+          <h5 class="fw-bold mb-1">Dr. Rahul Sharma</h5>
+          <p class="text-muted mb-2">Python Faculty</p>
+          <small class="text-muted">
+            MCA, PhD<br>
+            12+ Years Experience
+          </small>
+        </div>
+      </div>
+
+      <!-- Faculty 2 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card faculty-card text-center p-4 h-100">
+          <!-- <img src="https://randomuser.me/api/portraits/women/44.jpg" -->
+               class="faculty-img mx-auto mb-3" alt="Faculty">
+          <h5 class="fw-bold mb-1">Prof. Neha Patel</h5>
+          <p class="text-muted mb-2">C/C++ Faculty</p>
+          <small class="text-muted">
+            M.Sc, PhD<br>
+            10+ Years Experience
+          </small>
+        </div>
+      </div>
+
+      <!-- Faculty 3 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card faculty-card text-center p-4 h-100">
+          <!-- <img src="https://randomuser.me/api/portraits/men/45.jpg" -->
+               class="faculty-img mx-auto mb-3" alt="Faculty">
+          <h5 class="fw-bold mb-1">Mr. Amit Verma</h5>
+          <p class="text-muted mb-2">Mathematics Faculty</p>
+          <small class="text-muted">
+            M.Sc Mathematics<br>
+            15+ Years Experience
+          </small>
+        </div>
+      </div>
+
+      <!-- Faculty 4 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card faculty-card text-center p-4 h-100">
+          <!-- <img src="/images/faculty/javier-trueba-iQPr1XkF5F0-unsplash.jpg" -->
+               class="faculty-img mx-auto mb-3" alt="Faculty">
+          <h5 class="fw-bold mb-1">Ms. Pooja Mehta</h5>
+          <p class="text-muted mb-2">Web Faculty</p>
+          <small class="text-muted">
+            M.Sc WebDev<br>
+            9+ Years Experience
+          </small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESULTS SECTION ================= -->
+<section class="py-5" id="results">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Results Speak for Us</h2>
+      <p class="text-muted">Consistent academic excellence year after year</p>
+    </div>
+
+    <div class="row g-4 text-center">
+
+      <div class="col-md-3">
+        <div class="result-card p-4">
+          <h2 class="fw-bold text-primary">500+</h2>
+          <p class="text-muted mb-0">Students Taught</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="result-card p-4">
+          <h2 class="fw-bold text-primary">120+</h2>
+          <p class="text-muted mb-0">90%+ Scorers</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="result-card p-4">
+          <h2 class="fw-bold text-primary">35+</h2>
+          <p class="text-muted mb-0">High Company Selections</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="result-card p-4">
+          <h2 class="fw-bold text-primary">15+</h2>
+          <p class="text-muted mb-0">Years of Excellence</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="py-5" id="contact">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Get In Touch</h2>
+      <p class="text-muted">We’re happy to guide you for admissions</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Contact Info -->
+      <div class="col-md-5">
+        <div class="contact-box p-4 h-100">
+          <h5 class="fw-bold mb-3">Contact Information</h5>
+
+          <p class="mb-2"><strong>📍 Address:</strong><br>
+            2nd Floor, ABC Complex, Main Road, Your City
+          </p>
+
+          <p class="mb-2"><strong>📞 Phone:</strong><br>
+            +91 98765 43210
+          </p>
+
+          <p class="mb-2"><strong>✉ Email:</strong><br>
+            eliteclasses@gmail.com
+          </p>
+
+          <p class="mb-0"><strong>🕒 Timings:</strong><br>
+            Mon – Sat | 8:00 AM – 8:00 PM
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+     <div class="col-md-7">
+        <div class="contact-box p-4 h-100">
+
+          <!-- 🔥 IMPORTANT: no action, no method -->
+
+ <form id="contactForm">
+  <div class="row g-3">
+
+    <div class="col-md-6">
+      <input type="text" name="name" class="form-control" placeholder="Student Name" required>
+    </div>
+
+    <div class="col-md-6">
+      <input type="tel" name="phone" class="form-control" placeholder="Mobile Number" required>
+    </div>
+
+    <div class="col-md-12">
+      <input type="email" name="email" class="form-control" placeholder="Email Address">
+    </div>
+
+    <div class="col-md-12">
+      <select name="course" class="form-select" required>
+        <option value="">Select Course</option>
+        <option>Class 8 – 10</option>
+        <option>Class 11 – 12</option>
+        <option>Competitive Exams</option>
+      </select>
+    </div>
+
+    <div class="col-md-12">
+      <textarea name="message" class="form-control" rows="4" placeholder="Message"></textarea>
+    </div>
+
+    <div class="col-md-12">
+      <!-- IMPORTANT -->
+      <button type="submit" class="btn btn-primary w-100">
+        Submit Enquiry
+      </button>
+    </div>
+
+  </div>
+</form>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ <div class="modal fade" id="authModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4">
+
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">Welcome</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- LOGIN -->
+        <div id="loginBox">
+          <h6 class="fw-bold mb-3">Login</h6>
+
+          <form id="loginForm">
+            <input
+              type="email"
+              class="form-control mb-3"
+              id="loginEmail"
+              placeholder="Email"
+              required
+            />
+
+            <input
+              type="password"
+              class="form-control mb-3"
+              id="loginPassword"
+              placeholder="Password"
+              required
+            />
+
+            <button type="submit" class="btn btn-primary w-100">
+              Login
+            </button>
+          </form>
+
+          <p class="text-center mt-3">
+            Don’t have an account?
+            <button
+              type="button"
+              data-auth="signup"
+              class="btn btn-link fw-bold p-0 ms-1">
+              Sign up
+            </button>
+          </p>
+        </div>
+
+        <!-- SIGNUP -->
+        <div id="signupBox" class="d-none">
+          <h6 class="fw-bold mb-3">Sign Up</h6>
+
+          <form id="signupForm">
+            <input
+              class="form-control mb-3"
+              id="signupName"
+              placeholder="Full Name"
+              required
+            />
+
+            <input
+              type="email"
+              class="form-control mb-3"
+              id="signupEmail"
+              placeholder="Email"
+              required
+            />
+
+            <input
+              type="password"
+              class="form-control mb-3"
+              id="signupPassword"
+              placeholder="Password"
+              required
+            />
+
+            <button type="submit" class="btn btn-outline-primary w-100">
+              Create Account
+            </button>
+          </form>
+
+          <p class="text-center mt-3">
+            Already have an account?
+            <button
+              type="button"
+              data-auth="login"
+              class="btn btn-link fw-bold p-0 ms-1">
+              Login
+            </button>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
+<!-- 
+      <div class="modal-body">
+          
+<div class="col-md-12" id="loginBox">
+  <h6 class="fw-bold mb-3">Login</h6>
+
+  <form id="loginForm">
+    <input class="form-control mb-3" id="loginEmail"
+           placeholder="Email" required>
+
+    <input type="password" class="form-control mb-3"
+           id="loginPassword" placeholder="Password" required>
+
+    <button class="btn btn-primary w-100">Login</button>
+  </form>
+
+ 
+  <p class="text-center mt-3">
+    Don’t have an account?
+    <button
+      type="button"
+      id="openSignup"
+      class="btn btn-link fw-bold p-0 ms-1">
+      Sign up
+    </button>
+  </p>
+</div>
+
+
+       <div class="col-md-12 d-none" id="signupBox">
+  <h6 class="fw-bold mb-3">Sign Up</h6>
+
+  <form id="signupForm">
+    <input class="form-control mb-3" id="signupName"
+           placeholder="Full Name" required>
+
+    <input class="form-control mb-3" id="signupEmail"
+           placeholder="Email" required>
+
+    <input type="password" class="form-control mb-3"
+           id="signupPassword" placeholder="Password" required>
+
+    <button class="btn btn-outline-primary w-100">
+      Create Account
+    </button>
+  </form>
+
+  <p class="text-center mt-3">
+    Already have an account?
+    <button
+      type="button"
+      id="openLogin"
+      class="btn btn-link fw-bold p-0 ms-1">
+      Login
+    </button>
+  </p>
+</div>
+
+      
+      </div> -->
+
+    </div>
+  </div>
+</div>
+
+<!-- footer section -->
+<footer class="footer-premium text-light pt-5">
+  <div class="container">
+    <div class="row gy-5">
+
+      <!-- Brand -->
+      <div class="col-lg-4">
+        <h4 class="fw-bold mb-3">Bright Futures Academy</h4>
+        <p class="footer-desc">
+          Empowering students with expert guidance, smart learning,
+          and consistent academic excellence.
+        </p>
+
+        <div class="d-flex gap-3 mt-4">
+          <a href="#" class="social-icon">🌐</a>
+          <a href="#" class="social-icon">📘</a>
+          <a href="#" class="social-icon">📸</a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="col-lg-2 col-6">
+        <h6 class="footer-title">Navigation</h6>
+        <ul class="list-unstyled footer-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Results</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div class="col-lg-3 col-6">
+        <h6 class="footer-title">Programs</h6>
+        <ul class="list-unstyled footer-list">
+          <li>Python Programming</li>
+          <li>C/C++/Java Programming</li>
+          <li>Web Designing</li>
+          <li>Data Structure</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-3">
+        <h6 class="footer-title">Get in Touch</h6>
+        <p class="mb-2">📍 Gujarat, India</p>
+        <p class="mb-2">📞 +91 88663 37793</p>
+        <p>✉️ eliteclasses@gmail.com</p>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider my-4"></div>
+
+    <!-- Bottom -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pb-4">
+      <p class="mb-2 mb-md-0">
+        © 2026 Bright Futures Academy
+      </p>
+      <p class="mb-0">
+        Designed with ❤️ for education
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float" aria-label="aria-label">
+  💬
+</a>
+
+ 
+
+
+<!-- <script src="/js/auth.js"></script> -->
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/auth-ui.js"></script>
+<script src="/js/contact.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fb;
+    }
+
+    .sidebar {
+      width: 240px;
+      position: fixed;
+      height: 100vh;
+      background: #0f172a;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #cbd5f5;
+      padding: 12px;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-bottom: 6px;
+    }
+
+    .sidebar a.active,
+    .sidebar a:hover {
+      background: #1e293b;
+      color: #fff;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 30px;
+    }
+
+    .card {
+      border-radius: 16px;
+      border: none;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h5 class="fw-bold mb-4">🎓 Student</h5>
+  <a href="student-dashboard.html" class="active">🏠 Dashboard</a>
+  <a href="student-profile.html">👤 Profile</a>
+  <a href="#">📚 My Courses</a>
+  <hr>
+  <button id="dashboardLogoutBtn" class="btn btn-link text-danger p-0 text-decoration-none">
+    🚪 Logout
+  </button>
+ 
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <h3 class="fw-bold mb-4">
+    Welcome back, <span id="studentName">Student</span> 👋
+  </h3>
+
+  <!-- STATS -->
+  <div class="row g-4 mb-4">
+    <div class="col-md-4">
+      <div class="card p-4">
+        <small class="text-muted">Enrolled Courses</small>
+        <h2 class="fw-bold mt-2" id="enrolledCourses"></h2>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-4">
+        <small class="text-muted">Progress</small>
+        <h2 class="fw-bold mt-2" id="progressCard">65%</h2>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-4">
+        <small class="text-muted">Status</small>
+        <h2 class="fw-bold mt-2 text-success">Active</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- COURSES -->
+  <div class="card p-4">
+    <h5 class="fw-bold mb-3">My Courses</h5>
+
+    <div class="table-responsive">
+      <table class="table align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Course</th>
+            <th>Faculty</th>
+            <th>Progress</th>
+          </tr>
+        </thead>
+        <tbody id="enrollmentList">
+  <!-- dynamically filled -->
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+ <script src="/js/student-dashboard.js"></script>
+
+</body>
+</html>
