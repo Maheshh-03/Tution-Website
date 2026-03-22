@@ -8,7 +8,7 @@
     authArea.innerHTML = `
       <li class="nav-item">
         <a class="btn btn-sm btn-outline-primary"
-           href="/admin-dashboard.html">
+           href="admin-dashboard.html">
           Dashboard
         </a>
       </li>
@@ -22,7 +22,7 @@
     authArea.innerHTML = `
       <li class="nav-item">
         <a class="btn btn-sm btn-outline-primary"
-           href="/student-dashboard.html">
+           href="student-dashboard.html">
           My Dashboard
         </a>
       </li>
@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (admin) {
     navAuth.innerHTML = `
       <a class="btn btn-outline-primary btn-sm"
-         href="/admin-dashboard.html">Dashboard</a>
+         href="admin-dashboard.html">Dashboard</a>
     `;
   } else if (student) {
     navAuth.innerHTML = `
       <a class="btn btn-outline-primary btn-sm"
-         href="/student-dashboard.html">My Dashboard</a>
+         href="student-dashboard.html">My Dashboard</a>
     `;
   }
 });
