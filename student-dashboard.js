@@ -4,7 +4,7 @@
   const token = sessionStorage.getItem("token");
 
   if (!token) {
-    window.location.replace("/index.html");
+    window.location.replace("index.html");
     return;
   }
 
@@ -92,7 +92,7 @@ btn?.addEventListener("click", () => {
   console.log("Dashboard logout");
   console.log("localStorage token =", localStorage.getItem("token")); // MUST EXIST
 
-  window.location.replace("/index.html");
+  window.location.replace("index.html");
 });
 
 
