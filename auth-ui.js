@@ -147,7 +147,7 @@ logoutBtn?.addEventListener("click", () => {
   localStorage.removeItem("user");
   sessionStorage.clear(); // optional
 
-  window.location.replace("/index.html");
+  window.location.replace("index.html");
 });
 
 
