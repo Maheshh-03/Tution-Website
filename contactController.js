@@ -1,4 +1,4 @@
-const db = require("../config/db");
+const db = require("db.js");
 exports.submitContact = (req, res) => {
   console.log("REQUEST BODY:", req.body); // 🔥 DEBUG LINE
 
