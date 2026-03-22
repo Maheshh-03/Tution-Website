@@ -34,9 +34,9 @@
 
       // 🔁 Redirect based on role
       if (data.role === "admin") {
-        window.location.href = "/admin-dashboard.html";
+        window.location.href = "admin-dashboard.html";
       } else {
-        window.location.href = "/index.html";
+        window.location.href = "index.html";
       }
 
     } catch (err) {
