@@ -5,7 +5,7 @@
   const userStr = localStorage.getItem("user");
 
   if (!token || !userStr || userStr === "undefined") {
-    window.location.replace("/index.html");
+    window.location.replace("index.html");
     return;
   }
 
@@ -13,13 +13,13 @@
   try {
     user = JSON.parse(userStr);
   } catch {
-    window.location.replace("/index.html");
+    window.location.replace("index.html");
     return;
   }
 
   // 🚫 Students are NOT allowed here
   if (user.role !== "admin") {
-    window.location.replace("/dashboard.html");
+    window.location.replace("dashboard.html");
     return;
   }
 
@@ -47,7 +47,7 @@
   function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location.replace("/index.html");
+    window.location.replace("index.html");
   }
 
   document.getElementById("logoutBtn")?.addEventListener("click", logout);
