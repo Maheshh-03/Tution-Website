@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const rateLimiter = require("../middleware/rateLimiter");
-const { submitContact } = require("../controllers/contactController");
+const { submitContact } = require("contactController.js");
 
 router.post("/", rateLimiter, submitContact);
 
