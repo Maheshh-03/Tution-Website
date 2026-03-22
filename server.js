@@ -17,10 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../public")));
 
 // ================= ROUTES =================
-app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/contact", require("./routes/contactRoutes"));
-app.use("/api/admin", require("./routes/adminRoutes"));
-app.use("/api", require("./routes/studentRoutes"));
+app.use("/api/auth", require("authRoutes.js"));
+app.use("/api/contact", require("contactRoutes.js"));
+app.use("/api/admin", require("adminRoutes.js"));
+app.use("/api", require("studentRoutes.js"));
 
 // ================= SERVER =================
 const PORT = process.env.PORT || 5000;
