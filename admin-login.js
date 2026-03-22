@@ -40,7 +40,7 @@
       }
 
       // ✅ ADMIN REDIRECT
-      window.location.replace("/admin-dashboard.html");
+      window.location.replace("admin-dashboard.html");
 
     } catch (err) {
       console.error(err);
